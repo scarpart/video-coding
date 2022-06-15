@@ -3,7 +3,7 @@ from csv import writer
 
 # the only bits of information that need to be changed are shown below
 videos = os.listdir('/home/arthurscarpatto/VC/BD-Rate/Video-Samples/')
-num_frames = 30
+num_frames = 3
 qps = [22, 27, 32, 37]
 encoder = "VTM"
 
@@ -19,11 +19,6 @@ def parse(txt):
 
     return bitrate, psnr
 
-# implements the formula for calculating the BDrate of an encoded video
-def compute_bdrate(btr, psnr):
-    bdrate = 2# formula to compute bdrate here
-    return bdrate
-
 
 for v in videos:
     div_index = v.index("_")                                     # gets the _ index to separate the video name as follows: Video_WIDTHxHEIGHT --> Video / WIDTHxHEIGHT
@@ -34,10 +29,9 @@ for v in videos:
     for qp in qps:
         output = os.system(f"./bin/EncoderAppStatic -c cfg/encoder_randomaccess_vtm.cfg -c {video_cfg_filepath} -f {str(num_frames)} -q {str(qp)} > output.txt") 
         bit_rate, psnr = parse(output)
-        bdrate = compute_bdrate(bit_rate, psnr)
 
         # appends the information gathered into a csv file with all the relevant parameters  
         with open("/home/arthurscarpatto/VC/BD-Rate/results.csv", 'a', newline='') as csv_file:
             writer_object = writer(csv_file)
-            writer_object.writerow([encoder, v, video_res, num_frames, qp, bit_rate, psnr, bdrate, video_cfg_filepath])
+            writer_object.writerow([encoder, v, video_res, num_frames, qp, bit_rate, psnr, video_cfg_filepath])
             csv_file.close()
