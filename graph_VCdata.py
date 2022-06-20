@@ -2,9 +2,8 @@ import pandas as pd
 import seaborn as sb
 import matplotlib.pyplot as plt
 
-with open("/home/arthurscarpatto/VC/BD-Rate/results.csv", 'r') as csv_file:
-    df = pd.DataFrame(csv_file.read())
-    csv_file.close()
-
-sb.barplot(data=df, x='v', y='bdrate', hue='qp')
+df = pd.read_csv("/home/arthurscarpatto/VC/video-coding/results.csv") 
+fig, axes = plt.subplots(2, 1, figsize=(15,5))
+sb.barplot(data=df, x='v', y='psnr', hue='qsize', ax=axes[0]).set(title='VTM Test Run: Correlation Between Quantization Parameters and PSNR/BitRate', xlabel='')
+sb.barplot(data=df, x='v', y='bit_rate', hue='qsize', ax=axes[1]).set(xlabel='Videos')
 plt.show()
