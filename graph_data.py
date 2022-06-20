@@ -5,6 +5,7 @@ import json
 
 file_cfg = open('configs.json')
 configs = json.load(file_cfg)
+file_cfg.close()
 
 df = pd.read_csv("/home/arthurscarpatto/VC/video-coding/results.csv") 
 vtmdf = df.iloc[:16, :]
