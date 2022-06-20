@@ -6,6 +6,7 @@ file_cfgs = open('configs.json')
 configs = json.load(file_cfgs)
 file_cfgs.close()
 
+
 # function for extracting the bitrate and PSNR out of a txt file
 def parse(to_be_parsed):
     with open("./{}".format(to_be_parsed), 'r') as txt:
