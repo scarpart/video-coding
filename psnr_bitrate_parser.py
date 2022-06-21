@@ -30,8 +30,9 @@ for v in configs['videos']:
 
     # lines below input a command into the terminal and extract information from its output by means of a .txt file 
     for qp in configs['qps']:
+         # creating a unique name for the txt file based on the parameters
         name_txt = f"{configs['encoder']}_{video_name}_{str(configs['num_frames'])}frames_{str(qp)}qsize"
-        txt_dir = os.listdir('./individual-outcomes/')
+        txt_dir = os.listdir('./individual-outcomes/') 
         
         # handling different encoder options
         if configs['encoder'] == "VTM":            
@@ -40,18 +41,21 @@ for v in configs['videos']:
             if name_txt not in txt_dir:
                 os.system(f"/home/arthurscarpatto/VC/BD-Rate/VVCSoftware_VTM-VTM-17.0/bin/EncoderAppStatic \
                             -c /home/arthurscarpatto/VC/BD-Rate/VVCSoftware_VTM-VTM-17.0/cfg/encoder_randomaccess_vtm.cfg \
-                                -c {video_cfg_filepath} -f {str(configs['num_frames'])} -q {str(qp)} {configs['settings_VTM']}> {name_txt}.txt")
+                                -c {video_cfg_filepath} -f {str(configs['num_frames'])} -q {str(qp)} {configs['settings_VTM']}> ./individual-outcomes/{name_txt}.txt")
 
         elif configs['encoder'] == "vvenc":
             # configures vvenc and directs its output to a unique txt file
             if name_txt not in txt_dir:
                 os.system(f"/home/arthurscarpatto/VC/BD-Rate/vvenc/bin/release-static/vvencapp -i /home/arthurscarpatto/VC/BD-Rate/Video-Samples/{v} \
-                    --output=bit.266 --frames {str(configs['num_frames'])} --qp {str(qp)} {configs['settings_vvenc']}> /individual-outcomes/{name_txt}.txt")
+                    --output=bit.266 --frames {str(configs['num_frames'])} --qp {str(qp)} {configs['settings_vvenc']}> ./individual-outcomes/{name_txt}.txt")
 
-        bit_rate, psnr = parse(f"/individual-outcomes/{name_txt}.txt")
+        # parses the output txt file to acquire relevant information 
+        bit_rate, psnr = parse(f"individual-outcomes/{name_txt}.txt")
 
         # appends the information gathered into a csv file with all the relevant parameters  
         with open("./results.csv", 'a') as csv_file:
             writer_object = writer(csv_file)
+
+            # appends : name of encoder - video sample name - video resolution - number of frames - quantization parameter - bit rate - psnr - optional settings
             writer_object.writerow([configs['encoder'], v, video_res, configs['num_frames'], qp, bit_rate, psnr, configs[f"settings_{configs['encoder']}"]])
             csv_file.close()
