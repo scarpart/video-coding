@@ -1,4 +1,3 @@
-from audioop import avg
 from BDrate import BD_RATE
 import pandas as pd
 import json
