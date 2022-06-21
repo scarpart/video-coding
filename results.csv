@@ -1,1 +1,1 @@
-encoder,v,video_res,num_frames,qsize,bit_rate,psnr
+encoder,v,video_res,num_frames,qsize,bit_rate,psnr, optional_settings

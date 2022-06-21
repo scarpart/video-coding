@@ -31,7 +31,7 @@ for v in configs['videos']:
     # lines below input a command into the terminal and extract information from its output by means of a .txt file 
     for qp in configs['qps']:
         name_txt = f"{configs['encoder']}_{video_name}_{str(configs['num_frames'])}frames_{str(qp)}qsize"
-        txt_dir = os.listdir('./individual_outcomes/')
+        txt_dir = os.listdir('./individual-outcomes/')
         
         # handling different encoder options
         if configs['encoder'] == "VTM":            
@@ -51,7 +51,7 @@ for v in configs['videos']:
         bit_rate, psnr = parse(f"/individual-outcomes/{name_txt}.txt")
 
         # appends the information gathered into a csv file with all the relevant parameters  
-        with open("./results2.csv", 'a') as csv_file:
+        with open("./results.csv", 'a') as csv_file:
             writer_object = writer(csv_file)
-            writer_object.writerow([configs['encoder'], v, video_res, configs['num_frames'], qp, bit_rate, psnr])
+            writer_object.writerow([configs['encoder'], v, video_res, configs['num_frames'], qp, bit_rate, psnr, configs[f"settings_{configs['encoder']}"]])
             csv_file.close()
