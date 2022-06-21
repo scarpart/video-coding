@@ -46,9 +46,9 @@ for v in configs['videos']:
             # configures vvenc and directs its output to a unique txt file
             if name_txt not in txt_dir:
                 os.system(f"/home/arthurscarpatto/VC/BD-Rate/vvenc/bin/release-static/vvencapp -i /home/arthurscarpatto/VC/BD-Rate/Video-Samples/{v} \
-                    --output=bit.266 --frames {str(configs['num_frames'])} --qp {str(qp)} {configs['settings_vvenc']}> /individual_outcomes/{name_txt}.txt")
+                    --output=bit.266 --frames {str(configs['num_frames'])} --qp {str(qp)} {configs['settings_vvenc']}> /individual-outcomes/{name_txt}.txt")
 
-        bit_rate, psnr = parse("output.txt")
+        bit_rate, psnr = parse(f"/individual-outcomes/{name_txt}.txt")
 
         # appends the information gathered into a csv file with all the relevant parameters  
         with open("./results2.csv", 'a') as csv_file:
