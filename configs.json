@@ -1,1 +1,8 @@
-{"videos": ["BasketballPass_416x240_50.yuv", "Cactus_1920x1080_50.yuv", "RaceHorsesC_832x480_30.yuv", "FourPeople_1280x720_60.yuv"], "num_frames": 1, "qps": [22, 27, 32, 37], "encoder": "vvenc"}
+{   
+    "videos": ["BasketballPass_416x240_50.yuv", "Cactus_1920x1080_50.yuv", "RaceHorsesC_832x480_30.yuv", "FourPeople_1280x720_60.yuv"], 
+    "num_frames": 1, 
+    "qps": [22, 27, 32, 37], 
+    "encoder": "vvenc",
+    "settings_vvenc": "",
+    "settings_VTM": ""
+}
