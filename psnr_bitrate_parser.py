@@ -53,5 +53,5 @@ for v in configs['videos']:
         # appends the information gathered into a csv file with all the relevant parameters  
         with open("./results2.csv", 'a') as csv_file:
             writer_object = writer(csv_file)
-            writer_object.writerow([configs['encoder'], v, video_res, configs['num_frames'], qp, bit_rate, psnr, video_cfg_filepath])
+            writer_object.writerow([configs['encoder'], v, video_res, configs['num_frames'], qp, bit_rate, psnr])
             csv_file.close()
