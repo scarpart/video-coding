@@ -4,14 +4,14 @@ ENC. ALG. CFG: QPA:1 HAD:1 RDQ:1 RDQTS:1 ASR:1 MinSearchWindow:96 RestrictMESamp
 PRE-ANALYSIS CFG: STA:1 LeadFrames:0 TrailFrames:0 
 FAST TOOL CFG: ECU:0 FEN:1 FDM:1 FastSearch:4 (SCC:2) LCTUFast:1 FastMrg:2 PBIntraFast:1 AMaxBT:0 FastQtBtEnc:1 ContentBasedFastQtbt:0 FastMIP:4 FastIntraTools:1 IntraEstDecBit:2 FastLocalDualTree:1 IntegerET:0 FastSubPel:1 QtbttExtraFast:3 FastTTSplit:0 IBCFastMethod:3 FIM:0 ALFSpeed:0 QuantThr: 4 
 RATE CONTROL CFG: RateControl:0 LookAhead:0 
-PARALLEL PROCESSING CFG: NumThreads:8 MaxParallelFrames:4 WppBitEqual:1 WF:0 
+PARALLEL PROCESSING CFG: NumThreads:1 MaxParallelFrames:1 WppBitEqual:1 WF:0 
 
-started @ Wed Jun 22 14:47:08 2022
+started @ Wed Jun 22 17:21:57 2022
 
-POC     0 TId: 0 (  IDR_N_LP, I-SLICE, QP 17, TF 3)    4375160 bits [Y 46.0772 dB    U 44.8451 dB    V 46.6974 dB] [ET    65 ] [L0 ] [L1 ]
+POC     0 TId: 0 (  IDR_N_LP, I-SLICE, QP 17, TF 3)    4375160 bits [Y 46.0772 dB    U 44.8451 dB    V 46.6974 dB] [ET   118 ] [L0 ] [L1 ]
 
 	Total Frames |   Bitrate     Y-PSNR    U-PSNR    V-PSNR    YUV-PSNR   
 	        1    a  262509.6000   46.0772   44.8451   46.6974   45.9383
-finished @ Wed Jun 22 14:48:14 2022
+finished @ Wed Jun 22 17:23:56 2022
 
-Total Time: 65.504 sec. Fps(avg): 0.015 encoded Frames 1
+Total Time: 118.991 sec. Fps(avg): 0.008 encoded Frames 1
