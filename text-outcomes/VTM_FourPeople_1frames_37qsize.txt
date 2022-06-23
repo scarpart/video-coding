@@ -6,12 +6,12 @@ TOOL CFG: LFNST:1 MMVD:1 Affine:1 AffineType:1 AdaptBypassAffineMe:0 PROF:1 SbTM
 FAST TOOL CFG: LCTUFast:1 FastMrg:1 PBIntraFast:1 IMV4PelFast:1 MTSMaxCand: 4(intra) 4(inter) ISPFast:0 FastLFNST:0 AMaxBT:1 E0023FastEnc:1 ContentBasedFastQtbt:0 UseNonLinearAlfLuma:1 UseNonLinearAlfChroma:1 MaxNumAlfAlternativesChroma:8 FastMIP:0 TTFastSkip:31 TTFastSkipThr:1.075 FastLocalDualTree:1 RPR:0 TemporalFilter:4/4 SEI CTI:0 BIM:0 
 
 
- started @ Wed Jun 22 17:13:17 2022
-POC    0 LId:  0 TId: 0 ( IDR_N_LP, I-SLICE, QP 34 )     150616 bits [Y 38.7341 dB    U 42.6877 dB    V 44.0480 dB] [ET    89 ] [L0] [L1]
+ started @ Thu Jun 23 11:32:23 2022
+POC    0 LId:  0 TId: 0 ( IDR_N_LP, I-SLICE, QP 34 )     150616 bits [Y 38.7341 dB    U 42.6877 dB    V 44.0480 dB] [ET    90 ] [L0] [L1]
 
 LayerId  0
 	Total Frames |  Bitrate      Y-PSNR   U-PSNR   V-PSNR   YUV-PSNR 
 	1            a  9036.9600    38.7341  42.6877  44.0480  39.7978  
 
- finished @ Wed Jun 22 17:14:48 2022
- Total Time:       91.372 sec. [user]       91.372 sec. [elapsed]
+ finished @ Thu Jun 23 11:33:56 2022
+ Total Time:       92.523 sec. [user]       92.523 sec. [elapsed]
