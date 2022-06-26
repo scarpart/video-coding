@@ -59,5 +59,5 @@ for encoder in configs['encoder']:
                     writer_object = writer(csv_file)
 
                     # appends : name of encoder - video sample name - video resolution - number of frames - quantization parameter - bit rate - psnr - optional settings
-                    writer_object.writerow([encoder, v, video_res, configs['num_frames'], qp, bit_rate, psnr, configs[f"settings_{encoder}"], total_time])
+                    writer_object.writerow([encoder, video_name, video_res, configs['num_frames'], qp, bit_rate, psnr, configs[f"settings_{encoder}"], total_time])
                     csv_file.close()
