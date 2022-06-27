@@ -44,12 +44,12 @@ for encoder in configs['encoder']:
                     # configures VTM and directs its output to a unique txt file
                     os.system(f"~/VC/BD-Rate/VVCSoftware_VTM-VTM-17.0/bin/EncoderAppStatic \
                                 -c ~/VC/BD-Rate/VVCSoftware_VTM-VTM-17.0/cfg/encoder_randomaccess_vtm.cfg  -b ./binary-outcomes/{outcome}.bin \
-                                    -c {video_cfg_filepath} -f {str(configs['num_frames'])} -q {str(qp)} {configs['settings_VTM']}> ./text-outcomes/{outcome}.txt")
+                                    -c {video_cfg_filepath} -f {str(configs['num_frames'])} -q {str(qp)} {configs['settings_VTM']} > ./text-outcomes/{outcome}.txt")
 
                 elif encoder == "vvenc":
                     # configures vvenc and directs its output to a unique txt file
                     os.system(f"~/VC/BD-Rate/vvenc/bin/release-static/vvencapp -i ~/VC/BD-Rate/Video-Samples/{v} \
-                        --output=./binary-outcomes/{outcome}.bin --frames {str(configs['num_frames'])} --qp {str(qp)} {configs['settings_vvenc']}> ./text-outcomes/{outcome}.txt")
+                        --output=./binary-outcomes/{outcome}.bin --frames {str(configs['num_frames'])} --qp {str(qp)} {configs['settings_vvenc']} > ./text-outcomes/{outcome}.txt")
 
                 # parses the output txt file to acquire relevant information 
                 bit_rate, psnr, total_time = parse(f"text-outcomes/{outcome}.txt")
