@@ -3,6 +3,6 @@
     "num_frames": 1, 
     "qps": [22, 27, 32, 37], 
     "encoder": ["VTM", "vvenc"],
-    "settings_vvenc": "--threads 1 ",
+    "settings_vvenc": "--threads 1 --qpa 0 --preset slower",
     "settings_VTM": ""
 }
